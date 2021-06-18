@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://icons-for-free.com/iconfiles/png/512/keyboard+keyboard+piano+music+piano+piano+keyboard+yamaha-1320186609161102566.png">
+    <title>Piano</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            border-radius: 2rem;
+            padding: 5rem 20rem;
+        }
+
+        .board {
+            position: relative;
+            padding: 1rem 3rem;
+            width: 51rem;
+            border: 1px solid black;
+        }
+
+        .middle-note {
+            background: white;
+            color: Black;
+            border: 3px solid black;
+            width: 7rem;
+            height: 25rem;
+            font-size: 2rem;
+            padding-top: 15rem;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            box-shadow: 0.5rem 0.5rem 1.5rem black;
+        }
+
+        .middle-note:hover {
+            transform: rotateX(20deg);
+            border-bottom-left-radius: 0rem;
+            border-bottom-right-radius: 0rem;
+        }
+
+        .sharp-note {
+            background: black;
+            border: 1px solid black;
+            width: 5rem;
+            height: 15rem;
+            position: absolute;
+            padding-top: 10rem;
+            top: 1rem;
+            color: white;
+            font-size: 2rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        .sharp-note:hover {
+            transform: rotateX(20deg);
+            box-shadow: 0.5rem 0.5rem 2rem black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="board">
+            <div style="width:50.5rem; background:rgb(65, 65, 65);height:1rem;position:absolute;z-index:2;"></div>
+            <button class="btn middle-note" id="c" onclick="c_mid()">c</button>
+            <button class="btn middle-note" id="d" onclick="d_mid()">d</button>
+            <button class="btn middle-note" id="e" onclick="e_mid()">e</button>
+            <button class="btn middle-note" id="f" onclick="f_mid()">f</button>
+            <button class="btn middle-note" id="g" onclick="g_mid()">g</button>
+            <button class="btn middle-note" id="a" onclick="a_mid()">a</button>
+            <button class="btn middle-note" id="b" onclick="b_mid()">b</button>
+            <br>
+            <button class="btn sharp-note" id="C" onclick="c_sharp()" style="left:7.5rem;"> C</button>
+            <button class="btn sharp-note" id="D" onclick="d_sharp()" style="left:15rem;"> D</button>
+            <button class="btn sharp-note" id="F" onclick="f_sharp()" style="left:29.3rem;">F</button>
+            <button class="btn sharp-note" id="G" onclick="g_sharp()" style="left:36.5rem;">G</button>
+            <button class="btn sharp-note" id="A" onclick="a_sharp()" style="left:44rem;"> A</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var key, audio;
+        document.addEventListener('keypress', function (event) {
+            key = event.key;
+            Keyboard(key);
+        });
+
+        function Keyboard(key) {
+            switch (key) {
+                case 'a':
+                    audio = new Audio('Piano_Keynotes/A.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'b':
+                    audio = new Audio('Piano_Keynotes/B.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'c':
+                    audio = new Audio('Piano_Keynotes/C.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'd':
+                    audio = new Audio('Piano_Keynotes/D.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'e':
+                    audio = new Audio('Piano_Keynotes/E.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'f':
+                    audio = new Audio('Piano_Keynotes/F.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'g':
+                    audio = new Audio('Piano_Keynotes/G.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'A':
+                    audio = new Audio('Piano_Keynotes/A_sharp.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'C':
+                    audio = new Audio('Piano_Keynotes/C_sharp.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'D':
+                    audio = new Audio('Piano_Keynotes/D_sharp.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'F':
+                    audio = new Audio('Piano_Keynotes/F_sharp.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                case 'G':
+                    audio = new Audio('Piano_Keynotes/G_sharp.mp3');
+                    audio.playbackRate = 2;
+                    audio.play();
+                    break;
+                default:
+                    alert("Wrong Key pressed");
+                    break;
+
+            }
+        }
+
+        function c_mid() {
+            let audio = new Audio('Piano_Keynotes/C.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function d_mid() {
+            let audio = new Audio('Piano_Keynotes/D.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function e_mid() {
+            let audio = new Audio('Piano_Keynotes/E.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function f_mid() {
+            let audio = new Audio('Piano_Keynotes/F.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function g_mid() {
+            let audio = new Audio('Piano_Keynotes/G.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function a_mid() {
+            let audio = new Audio('Piano_Keynotes/A.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function b_mid() {
+            let audio = new Audio('Piano_Keynotes/B.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function c_sharp() {
+            let audio = new Audio('Piano_Keynotes/C_sharp.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function d_sharp() {
+            let audio = new Audio('Piano_Keynotes/D_sharp.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function f_sharp() {
+            let audio = new Audio('Piano_Keynotes/F_sharp.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function a_sharp() {
+            let audio = new Audio('Piano_Keynotes/A_sharp.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+        function g_sharp() {
+            let audio = new Audio('Piano_Keynotes/G_sharp.mp3');
+            audio.playbackRate = 2;
+            audio.play();
+        };
+    </script>
+</body>
+
+</html>
