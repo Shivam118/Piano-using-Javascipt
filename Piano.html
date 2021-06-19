@@ -51,7 +51,7 @@
         }
 
         .board {
-            padding:2rem 2rem;
+            padding: 2rem 2rem;
             padding-bottom: 0.5rem;
             border-top-left-radius: 1rem;
             border-top-right-radius: 2rem;
@@ -59,16 +59,19 @@
             border-bottom-right-radius: 1rem;
             background: black;
         }
-        .subboard{    
+
+        .subboard {
             position: relative;
             display: inline-block;
             /* padding-left:3rem; */
             width: 51rem;
         }
-        .boardbtn{
+
+        .boardbtn {
             display: inline-block;
             background: white;
         }
+
         .middle-note {
             background: white;
             color: Black;
@@ -105,7 +108,6 @@
         }
 
         .sharp-note:hover {
-            transform: rotateX(20deg);
             box-shadow: 0.5rem 0.5rem 2rem black;
             border: 0px;
             background: rgb(159, 216, 255);
@@ -114,6 +116,7 @@
 </head>
 
 <body>
+
     <header class="nav">
         Virtual Piano Keyboard
     </header>
@@ -136,11 +139,50 @@
                 <button class="btn sharp-note" id="A" onclick="a_sharp()" style="left:41rem;"> A</button>
             </div>
             <div class="boardbtn">
-                <button class="play"></button>
-                <button class="pause"></button>
-                <button class="replay"></button>
-                <button class="stop"></button>
-                <button class="record"></button>
+                <button class="play">
+                    <i class="bi bi-play-circle-fill">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+                        </svg>
+                    </i>
+                </button>
+                <button class="pause">
+                    <i class="bi bi-pause-circle-fill">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z" />
+                        </svg>
+                    </i>
+                </button>
+                <button class="replay">
+                    <i class="bi bi-reply-fill">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-reply-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z" />
+                        </svg>
+                    </i>
+                </button>
+                <button class="stop">
+                    <i class="bi bi-stop-circle-fill">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z" />
+                        </svg>
+                    </i>
+                </button>
+                <button class="record">
+                    <i class="bi bi-record-circle-fill">
+                        <svg id="record" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-record-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                    </i>
+                </button>
             </div>
         </div>
     </div>
