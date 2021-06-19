@@ -10,23 +10,22 @@
     <link rel="icon"
         href="https://icons-for-free.com/iconfiles/png/512/keyboard+keyboard+piano+music+piano+piano+keyboard+yamaha-1320186609161102566.png">
     <title>Piano</title>
+    <!-- CSS only -->
     <style>
         body {
-
             overflow: hidden;
             padding: 0rem;
             margin: 0rem;
         }
 
         .nav {
-            margin: 0rem;
+            margin: 0rem 0vw;
             color: white;
             background: black;
-            font-size: 4rem;
+            font-size: 5vw;
             font-family: 'Caveat', cursive;
             text-align: center;
-            padding: 1rem;
-            /* position:fixed; */
+            padding: 1rem 1vw;
             opacity: 0.9;
             width: 100vw;
 
@@ -34,51 +33,42 @@
 
         .container {
             border-radius: 2rem;
-            padding: 5rem 20rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("https://images.all-free-download.com/images/graphicthumb/vector_musical_theme_of_art_and_design_294052.jpg");
-            background-repeat: repeat;
+            padding: 5rem 15vw;
             border-radius: 0rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("bg1.png");
+            background-repeat: repeat;
             background-position: left;
-            background-size: auto;
-            background-size: 20vw;
+            background-size: cover;
+            background-size: 100vw;
             height: 100vh;
         }
-
-        h1 {
-            background: white;
-            font-size: 4rem;
-            display: inline-block;
-        }
-
         .board {
-            padding: 2rem 2rem;
-            padding-bottom: 0.5rem;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 2rem;
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
+            padding: 2rem 2vw;
+            padding-bottom: 0.4rem;
+            border-top-left-radius: 3rem;
+            border-bottom-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+            border-top-right-radius: 20rem;
             background: black;
         }
-
         .subboard {
             position: relative;
             display: inline-block;
             /* padding-left:3rem; */
-            width: 51rem;
+            width: 51vw;
         }
 
         .boardbtn {
             display: inline-block;
-            background: white;
         }
 
         .middle-note {
             background: white;
             color: Black;
-            border: 3px solid black;
-            width: 7rem;
+            border: 0.3rem solid black;
+            width:6.6vw;
             height: 25rem;
-            font-size: 2rem;
+            font-size: 3vw;
             padding-top: 15rem;
             border-bottom-left-radius: 0.5rem;
             border-bottom-right-radius: 0.5rem;
@@ -90,27 +80,72 @@
             border-bottom-left-radius: 0rem;
             border-bottom-right-radius: 0rem;
             background: rgb(159, 216, 255);
-            border: 0px;
+            border: 0rem;
         }
 
         .sharp-note {
             background: black;
-            border: 1px solid black;
-            width: 5rem;
+            border: 0.3rem solid black;
+            width: 5vw;
             height: 15rem;
             position: absolute;
             padding-top: 10rem;
-            top: 1rem;
+            top: 0.3rem;
             color: white;
-            font-size: 2rem;
+            font-size: 2vw;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
         }
 
         .sharp-note:hover {
             box-shadow: 0.5rem 0.5rem 2rem black;
-            border: 0px;
+            border: 0rem;
             background: rgb(159, 216, 255);
+        }
+
+        .text-primary {
+            color: #0d6efd !important
+        }
+
+        .text-secondary {
+            color: #6c757d !important
+        }
+
+        .text-success {
+            color: #198754 !important
+        }
+
+        .text-info {
+            color: #0dcaf0 !important
+        }
+
+        .text-warning {
+            color: #ffc107 !important
+        }
+
+        .text-danger {
+            color: #dc3545 !important
+        }
+
+        .text-light {
+            color: #f8f9fa !important
+        }
+
+        .text-dark {
+            color: #212529 !important
+        }
+
+        .text-white {
+            color: #fff !important
+        }
+        .play,.pause,.stop,.replay,.record{
+            background:none;
+            border:0rem;
+        }
+        .play:hover,.pause:hover,.stop:hover,.replay:hover,.record:hover{
+            cursor: not-allowed;
+        }
+        .bi{
         }
     </style>
 </head>
@@ -123,7 +158,6 @@
     <div class="container">
         <div class="board">
             <div class="subboard">
-                <div style="width:50.5rem; background:rgb(65, 65, 65);height:1rem;position:absolute;z-index:2;"></div>
                 <button class="btn middle-note" id="c" onclick="c_mid()">c</button>
                 <button class="btn middle-note" id="d" onclick="d_mid()">d</button>
                 <button class="btn middle-note" id="e" onclick="e_mid()">e</button>
@@ -132,56 +166,48 @@
                 <button class="btn middle-note" id="a" onclick="a_mid()">a</button>
                 <button class="btn middle-note" id="b" onclick="b_mid()">b</button>
                 <br>
-                <button class="btn sharp-note" id="C" onclick="c_sharp()" style="left:4.5rem;"> C</button>
-                <button class="btn sharp-note" id="D" onclick="d_sharp()" style="left:12rem;"> D</button>
-                <button class="btn sharp-note" id="F" onclick="f_sharp()" style="left:26.3rem;">F</button>
-                <button class="btn sharp-note" id="G" onclick="g_sharp()" style="left:33.5rem;">G</button>
-                <button class="btn sharp-note" id="A" onclick="a_sharp()" style="left:41rem;"> A</button>
+                <button class="btn sharp-note" id="C" onclick="c_sharp()" style="left:4.2vw;"> C</button>
+                <button class="btn sharp-note" id="D" onclick="d_sharp()" style="left:11.2vw;"> D</button>
+                <button class="btn sharp-note" id="F" onclick="f_sharp()" style="left:24.7vw;">F</button>
+                <button class="btn sharp-note" id="G" onclick="g_sharp()" style="left:31.5vw;">G</button>
+                <button class="btn sharp-note" id="A" onclick="a_sharp()" style="left:38.5vw;"> A</button>
             </div>
             <div class="boardbtn">
                 <button class="play">
-                    <i class="bi bi-play-circle-fill">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                        </svg>
-                    </i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-play-circle-fill text-primary" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+                    </svg>
                 </button>
                 <button class="pause">
-                    <i class="bi bi-pause-circle-fill">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z" />
-                        </svg>
-                    </i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-pause-circle-fill text-secondary" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z" />
+                    </svg>
+                </button>
+                <br>
+                <button class="stop">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-stop-circle-fill text-warning" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z" />
+                    </svg>
                 </button>
                 <button class="replay">
-                    <i class="bi bi-reply-fill">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-reply-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z" />
-                        </svg>
-                    </i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-reply-fill text-success" viewBox="0 0 16 16">
+                        <path
+                            d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z" />
+                    </svg>
                 </button>
-                <button class="stop">
-                    <i class="bi bi-stop-circle-fill">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z" />
-                        </svg>
-                    </i>
-                </button>
-                <button class="record">
-                    <i class="bi bi-record-circle-fill">
-                        <svg id="record" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-record-circle-fill" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                        </svg>
-                    </i>
+                <br>
+                <button class="record btn-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-record-circle-fill text-danger" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
                 </button>
             </div>
         </div>
@@ -323,6 +349,10 @@
             audio.play();
         };
     </script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
