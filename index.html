@@ -16,8 +16,9 @@
             overflow: hidden;
             padding: 0rem;
             margin: 0rem;
+            box-sizing:border-box;
+            width:100vw;
         }
-
         .nav {
             margin: 0rem 0vw;
             color: white;
@@ -28,9 +29,7 @@
             padding: 1rem 1vw;
             opacity: 0.9;
             width: 100vw;
-
         }
-
         .container {
             border-radius: 2rem;
             padding: 5rem 15vw;
@@ -42,7 +41,6 @@
             background-size: 100vw;
             height: 100vh;
         }
-
         .board {
             padding: 2rem 2vw;
             padding-bottom: 0.4rem;
@@ -53,7 +51,6 @@
             background: black;
             width:auto;
         }
-
         .subboard {
             position: relative;
             display: inline-block;
@@ -77,8 +74,7 @@
             margin-left:1vw;
         }
         .btnlabel span{
-            display:block;
-            
+            display:block;    
         }
         .middle-note {
             background: white;
@@ -180,7 +176,7 @@
     </style>
 </head>
 
-<body>
+<body onload="HideNav()">
 
     <header class="nav">
         Virtual Piano Keyboard
@@ -250,7 +246,16 @@
         </div>
     </div>
     <script type="text/javascript">
+        var DeviceChange = window.matchMedia("(max-width: 800px)");
+        if (DeviceChange.matches){
+            alert('Please Rotate you Screen to Landscape Orientation');
+        }
         var key, audio;
+       function HideNav() {
+            setTimeout(()=>{
+                document.querySelector('.nav').style.display="none";
+            },1000);
+        }
         document.addEventListener('keypress', function (event) {
             key = event.key;
             Keyboard(key);
